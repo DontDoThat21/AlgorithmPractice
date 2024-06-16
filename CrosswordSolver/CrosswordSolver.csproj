@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="english.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="english.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AlgorithmAnalysis\Algorithms.csproj" />
+    <ProjectReference Include="..\EcommerceRateLimiting\EcommerceRateLimiting.csproj" />
+  </ItemGroup>
+
+</Project>
