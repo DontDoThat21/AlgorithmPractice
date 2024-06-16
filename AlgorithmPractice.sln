@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcommerceRateLimiting", "EcommerceRateLimiting\EcommerceRateLimiting.csproj", "{B331E61C-2AAE-475D-8150-C2060D72EF0C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleAPI", "SimpleAPI\SimpleAPI\SimpleAPI.csproj", "{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{B331E61C-2AAE-475D-8150-C2060D72EF0C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B331E61C-2AAE-475D-8150-C2060D72EF0C}.Release|x86.ActiveCfg = Release|Any CPU
 		{B331E61C-2AAE-475D-8150-C2060D72EF0C}.Release|x86.Build.0 = Release|Any CPU
+		{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}.Debug|x86.Build.0 = Debug|Any CPU
+		{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}.Release|x86.ActiveCfg = Release|Any CPU
+		{F2713B72-6FD2-4F21-8C03-FDAEFF999B26}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
