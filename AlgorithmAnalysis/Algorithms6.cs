@@ -18,6 +18,40 @@ namespace Algorithms
         */
     public class Algorithms6
     {
+        public Algorithms6()
+        {
 
+        }
+
+        public static bool GetResultFromArray(int[] numbers, int search)
+        {
+            if(numbers.Contains(search))
+                return true;
+        }
+
+        public static bool GetResultFromArrayBST(int[] numbers, int search)
+        {
+            if (numbers.Contains(search))
+                return true;
+        }
+    }
+
+    public class BinarySearchTree
+    {
+        public static List<BinarySearchTreeNode>() tree = new List<BinarySearchTreeNode>();
+
+        public static bool FindResultInBinarySearchTree(List<BinarySearchTreeNode> tree)
+        {
+            for (int i = 0; i < tree.Count; i++)
+            {
+
+            }
+        }
+    }
+
+    public class BinarySearchTreeNode
+    {
+        public static BinarySearchTreeNode child = null;
+        public static BinarySearchTreeNode parent = null;
     }
 }
