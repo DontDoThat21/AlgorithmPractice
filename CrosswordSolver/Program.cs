@@ -10,6 +10,7 @@ using EcommerceRateLimiting;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Net.Http;
+using Algorithms.Leetcode;
 
 namespace CrosswordSolver
 {
@@ -65,7 +66,8 @@ namespace CrosswordSolver
                 Console.WriteLine("(1) Crossword Solver");
                 Console.WriteLine("(2) Algorithm Performance Monitor");
                 Console.WriteLine("(3) Enter Ecommerce Rate Limiting Module");
-                Console.WriteLine("(4) Exit");
+                Console.WriteLine("(4) Enter Generic Algorithms Module");
+                Console.WriteLine("(5) Exit");
 
                 string modeChoice = Console.ReadLine();
 
@@ -84,6 +86,10 @@ namespace CrosswordSolver
                         EcommerceRateLimitingMenu().Wait();
                         break;
                     case "4":
+                        Console.Clear();
+                        GenericAlgorithmsMenu().Wait();
+                        break;
+                    case "5":
                         Console.Clear();
                         exit = true;
                         break;
@@ -152,10 +158,134 @@ namespace CrosswordSolver
                         Console.WriteLine("Invalid choice. Please select either '1', '2', '3', '4', '5', or 'M'.");
                         break;
                 }
+                
+                Console.Clear();
+            } while (!exit);
+        }
+
+        static async Task GenericAlgorithmsMenu()
+        {
+            bool exit = false;
+            bool isInvalidLastChoice = false;
+
+            do
+            {
+                if (isInvalidLastChoice)
+                {
+                    Console.WriteLine("Invalid choice. Please select either '1', '2' or 'M'.\n");
+                }
+
+                isInvalidLastChoice = false;
+
+                Console.WriteLine("You've entered the Generic Algorithms Module.\n");
+                Console.WriteLine("Select a demo to execute:\n");
+                Console.WriteLine("(1) Add Two Numbers (Linked Lists) demo...");
+                Console.WriteLine("(2) Median of Two Sorted Arrays demo...");
+                Console.WriteLine("\nPress 'M' to return to the main menu...");
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        Console.Clear();
+                        RunAddTwoNumbersDemo();
+                        break;
+                    case "2":
+                        Console.Clear();
+                        RunMedianTwoSortedArraysDemo();
+                        break;
+                    case "M":
+                    case "m":
+                        Console.Clear();
+                        exit = true;
+                        break;
+                    default:
+                        isInvalidLastChoice = true;
+                        Console.WriteLine("Invalid choice. Please select either '1', '2' or 'M'.");
+                        break;
+                }
 
                 Console.Clear();
             } while (!exit);
-        }        
+
+            await Task.CompletedTask;
+        }
+
+        private static void RunAddTwoNumbersDemo()
+        {
+            // Example: (2 -> 4 -> 3) + (5 -> 6 -> 4) = (7 -> 0 -> 8)
+            var l1 = BuildListFromNumberReversed(342); // 2 -> 4 -> 3
+            var l2 = BuildListFromNumberReversed(465); // 5 -> 6 -> 4
+
+            Console.WriteLine("Algorithm: Add Two Numbers (Linked Lists)\n");
+            Console.WriteLine("Input 1 (reversed): " + FormatList(l1));
+            Console.WriteLine("Input 2 (reversed): " + FormatList(l2));
+
+            var result = AddTwoLinkedListNumbersNodes.AddTwoNumbers(l1, l2);
+
+            Console.WriteLine("Result (reversed):   " + FormatList(result));
+            Console.WriteLine();
+            Console.WriteLine("Press Enter to continue...");
+            Console.ReadLine();
+        }
+
+        private static void RunMedianTwoSortedArraysDemo()
+        {
+            // Simple demo with fixed inputs. You can extend this to accept user input if desired.
+            int[] nums1 = new[] { 1, 3 };
+            int[] nums2 = new[] { 2 };
+
+            Console.WriteLine("Algorithm: Median of Two Sorted Arrays\n");
+            Console.WriteLine($"Input 1: [ {string.Join(", ", nums1)} ]");
+            Console.WriteLine($"Input 2: [ {string.Join(", ", nums2)} ]");
+
+            double median = MedianTwoSortedArrays.FindMedianSortedArrays(nums1, nums2);
+
+            Console.WriteLine($"Median: {median}");
+            Console.WriteLine();
+            Console.WriteLine("Press Enter to continue...");
+            Console.ReadLine();
+        }
+
+        private static ListNode BuildListFromNumberReversed(int number)
+        {
+            if (number == 0) return new ListNode(0);
+
+            ListNode head = null;
+            ListNode current = null;
+
+            while (number > 0)
+            {
+                int digit = number % 10;
+                var node = new ListNode(digit);
+                if (head == null)
+                {
+                    head = node;
+                    current = node;
+                }
+                else
+                {
+                    current.next = node;
+                    current = node;
+                }
+                number /= 10;
+            }
+
+            return head;
+        }
+
+        private static string FormatList(ListNode head)
+        {
+            var parts = new List<string>();
+            var curr = head;
+            while (curr != null)
+            {
+                parts.Add(curr.val.ToString());
+                curr = curr.next;
+            }
+            return string.Join(" -> ", parts);
+        }
 
         /// <summary>
         /// change from main to algo menu
