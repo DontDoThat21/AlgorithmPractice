@@ -27,18 +27,20 @@ namespace Algorithms
         {
             if(numbers.Contains(search))
                 return true;
+            return false;
         }
 
         public static bool GetResultFromArrayBST(int[] numbers, int search)
         {
             if (numbers.Contains(search))
                 return true;
+            return false;
         }
     }
 
     public class BinarySearchTree
     {
-        public static List<BinarySearchTreeNode>() tree = new List<BinarySearchTreeNode>();
+        public static List<BinarySearchTreeNode> tree = new List<BinarySearchTreeNode>();
 
         public static bool FindResultInBinarySearchTree(List<BinarySearchTreeNode> tree)
         {
@@ -46,6 +48,7 @@ namespace Algorithms
             {
 
             }
+            return false;
         }
     }
 
